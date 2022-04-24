@@ -29,6 +29,19 @@
 }
 
 
+
+/* -------DARK THEME--------- */
+.dark-theme-variables {
+    --color-background:#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light:rgba(0,0,0,0.4);
+    --box-shadow:0 2rem 3rem var(--color-light);
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -50,6 +63,7 @@ html {
     margin: 0 auto;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
+    
 }
 body {
     width: 100vw;
@@ -58,7 +72,8 @@ body {
     font-size: 0.88rem;
     background: var(--color-background);
     user-select: none;
-    overflow: hidden;
+    overflow-x: hidden;
+    
 }
 
 a {
@@ -73,22 +88,27 @@ img {
 h1 {
     font-weight: 800;
     font-size: 1.8rem;
+    color: var(--color-dark);
 }
 
 h2 {
     font-size: 1.4rem;
+    color: var(--color-dark);
 }
 
 h3 {
     font-size: 0.8rem;
+    color: var(--color-dark);
 }
 
 h4 {
     font-size: 1.4rem;
+    color: var(--color-dark);
 }
 
 h5 {
     font-size: 0.77rem;
+    color: var(--color-dark);
 }
 
 small {
@@ -112,6 +132,7 @@ p {
 
 b{
     color: var(--color-dark);
+
 }
 .primary{
     color: var(--color-primary);
@@ -131,11 +152,11 @@ b{
 
 aside{
     height: 100vh;
-    background: white;
+    background:var(--color-white);
 
 }
 aside .top{
-    background: white;
+    background:var(--color-white);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,7 +180,7 @@ aside .close{
 /* ===========SIDEBAR=========*/
 
 aside .sidebar{
-    background: white;
+    background:var(--color-white);
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -231,7 +252,7 @@ aside .sidebar .message-count{
 /*=======MAIN==========*/
 
 main{
-    margin-top: 1.4rem;
+    margin: 1.4rem;
 }
 main .date{
     display: inline-block;
@@ -292,6 +313,7 @@ main .insights >div .middle{
 main .insights h3{
     margin: 1rem 0 0.6rem;
     font-size: 1rem;
+    
 }
 
 main .insights .progress{
@@ -351,12 +373,13 @@ main .insights small{
 /*======RECENTS ORDERS======*/
 
 main .recent-orders{
-    margin-top: 2rem;
+    margin: 2rem;
 
 }
 
 main .recent-orders h2{
     margin-bottom: 0.8rem;
+    margin-left: 1.2rem;
 }
 
 main .recent-orders table{
@@ -365,12 +388,16 @@ main .recent-orders table{
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
+    margin: 0.8rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
 
 main .recent-orders table:hover{
     box-shadow: none;
+}
+th{
+    color: var(--color-dark);
 }
 
 main table tbody td {
@@ -442,7 +469,7 @@ main .recent-orders a{
 /*=======RECENT UPDATES=====*/
 
 .right .recent-updates{
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
 .right .recent-updates h2{
@@ -470,7 +497,7 @@ main .recent-orders a{
 
 /*========SALES ANALYTICS=====*/
 .right .sales-analytics{
-    margin-top: 2rem;
+    margin: 2rem;
 
 }
 .right .sales-analytics h2{
@@ -521,6 +548,11 @@ main .recent-orders a{
     justify-content: center;
 }
 
+.right .sales-analytics .add-product:hover{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
 .right .sales-analytics .add-product div{
     display: flex;
     align-items: center;
@@ -534,7 +566,7 @@ main .recent-orders a{
 
 /*=======MEDIA QUERIES=======*/
 
-@media screen and (max-width:1200px){
+@media screen and (max-width: 1200px) {
     .container{
         width:94%;
         grid-template-columns: 7rem auto 23rem;
@@ -587,9 +619,12 @@ main .recent-orders a{
 
 
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px)  {
     .container{
         width: 100%;
+        grid-template-columns: 1fr;
+        
+       
     }
     
     aside{
@@ -602,6 +637,13 @@ main .recent-orders a{
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu{
+        to{
+            left:0;
+        }
     }
 
     aside .logo{
@@ -640,6 +682,7 @@ main .recent-orders a{
         position: relative;
         margin: 3rem 0 0 0;
         width: 100%;
+        
     }
 
     .right{
@@ -666,5 +709,21 @@ main .recent-orders a{
         position: absolute;
         left: 66%;
     }
-    
+    .right .profile .info{
+        display: none;
+    }
+
+    .right .top button{
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+        
+    }
+    .right .top button span{
+        font-size: 2rem;
+    }
 }
+
