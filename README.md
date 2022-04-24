@@ -7,4 +7,9 @@ Technologes used:
 
 I used css variable,css Grid,css flexbox and media queries for responsive design.
 css transsition  and animation for some cool animation effects.
-![dark mode](assets/dark mode.png)
+
+# Dark Mode
+[![VvCXzG.md.png](https://iili.io/VvCXzG.md.png)](https://freeimage.host/i/VvCXzG)
+
+# Light Mode
+[![Vvn2rN.md.png](https://iili.io/Vvn2rN.md.png)](https://freeimage.host/i/Vvn2rN)
